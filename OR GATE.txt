@@ -1,0 +1,9 @@
+CHIP Or {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    Nand (a=a, b=a, out=nand(a));
+    Nand (a=b, b=b, out=nand(b));
+    Nand (a=nand(a) ,b=nand(b) ,out=out);
+}
